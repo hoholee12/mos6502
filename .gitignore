@@ -1,0 +1,7 @@
+src/*.o
+src/mos6502
+build/*.*
+build/*
+mos6502
+perf.data
+dump.txt
