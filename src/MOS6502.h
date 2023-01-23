@@ -25,7 +25,7 @@ public:
     bit5: - 
     bit4: break
     bit3: decimal(bcd mode for adc/sbc)
-    bit2: interrupt(block interrupts)
+    bit2: disable interrupts
     bit1: zero
     bit0: carry
 
@@ -66,7 +66,15 @@ public:
     void AND();
     void EOR(); //XOR
     void ORA(); //OR
-    
+    //shift
+    void ASL(); //shift left (with zero bit on right)
+    void LSR(); //shift right (with zero bit on left)
+    void ROL(); //rotate left (with carry bit on right)
+    void ROR(); //rotate right (with zero bit on left)
+    //flag
+    void CLC(); //clear carry bit
+    void CLD(); //clear decimal bit
+    void CLI(); //clear interrupt disable
 
 
 
