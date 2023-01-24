@@ -16,8 +16,9 @@ public:
     uint8_t ac;
     uint8_t x;
     uint8_t y;
-    uint8_t sr; //stats reg
     uint8_t sp; //stack ptr
+
+    uint8_t sr; //stats reg
     /*
     sr flags:
     bit7: negative
@@ -28,9 +29,6 @@ public:
     bit2: disable interrupts
     bit1: zero
     bit0: carry
-
-
-
     */
 
     //ops
@@ -75,7 +73,34 @@ public:
     void CLC(); //clear carry bit
     void CLD(); //clear decimal bit
     void CLI(); //clear interrupt disable
+    void CLV(); //clear overflow bit
+    void SEC(); //set carry bit
+    void SED(); //set decimal bit
+    void SEI(); //set interrupt disable
+    //compare
+    //
+    void CMP(); //compare with a reg
+    void CPX(); //compare with x reg
+    void CPY(); //compare with y reg
+    //condition branch
+    void BCC(); //branch on carry clear
+    void BCS(); //branch on carry set
+    void BEQ(); //branch on equal (zero set)
+    void BMI(); //branch on minus (negative set)
+    void BNE(); //branch on not equal (zero clear)
+    void BPL(); //branch on plus (negative clear)
+    void BVC(); //branch on overflow clear
+    void BVS(); //branch on overflow set
+    //jmps / subroutines
+    void JMP();
+    void JSR(); //jmp to subroutine
+    void RTS(); //return from subroutine
+    //interrupt
+    void BRK();
+    void RTI(); //return from interrupt
 
+    void BIT(); //bit test
+    void NOP(); // noop
 
 
 
