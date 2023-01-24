@@ -43,7 +43,7 @@ $(BUILD_DIR)/%.o: $(IMGUI_DIR)/backends/%.cpp
 $(BUILD_DIR)/%.o: $(GLAD_DIR)/src/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(BUILD_DIR)/chip8-emu: $(OBJS)
+$(BUILD_DIR)/mos6502: $(OBJS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 
 $(BUILD_DIR):

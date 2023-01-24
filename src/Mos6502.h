@@ -1,4 +1,6 @@
 #pragma once
+#include<stdint.h>
+#include "Memory.h"
 
 /*
 mos6502 disassembler
@@ -9,7 +11,7 @@ https://www.masswerk.at/6502/6502_instruction_set.html
 
 */
 
-class mos6502{
+class Mos6502{
 public:
     //registers
     uint16_t pc; //program counter
@@ -30,6 +32,14 @@ public:
     bit1: zero
     bit0: carry
     */
+    Memory* mem;
+    Mos6502(Memory* mem):mem(mem){}
+
+
+    //fetch op
+    uint32_t opcode;
+    uint32_t operand;
+    int fetch();    //return cycles
 
     //ops
     //transfers
@@ -104,4 +114,4 @@ public:
 
 
 
-}
+};
